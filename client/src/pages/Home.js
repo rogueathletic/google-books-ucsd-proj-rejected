@@ -12,7 +12,7 @@ class Home extends Component {
   state = {
     books: [],
     q: "",
-    message: "Search For A Book To Begin!"
+    message: "Nothing yet, lets search for a new book together."
   };
 
   handleInputChange = event => {
@@ -24,15 +24,16 @@ class Home extends Component {
 
   getBooks = () => {
     API.getBooks(this.state.q)
-      .then(res =>
+      .then(res => {
+        console.log(res)
         this.setState({
           books: res.data
         })
-      )
+       } )
       .catch(() =>
         this.setState({
           books: [],
-          message: "No New Books Found, Try a Different Query"
+          message: "You may want to check and see if you spelt name of the book correctly and try again."
         })
       );
   };

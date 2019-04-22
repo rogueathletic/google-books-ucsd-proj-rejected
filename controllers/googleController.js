@@ -7,7 +7,7 @@ module.exports = {
       .get("https://www.googleapis.com/books/v1/volumes", {
         params
       })
-      .then(results =>
+      .then(results => 
         results.data.items.filter(
           result =>
             result.volumeInfo.title &&
@@ -26,6 +26,6 @@ module.exports = {
         )
       )
       .then(books => res.json(books))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(422).json({"googleControllerFindall": err}));
   }
 };

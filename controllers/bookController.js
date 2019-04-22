@@ -8,8 +8,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Book.findById(req.params.id)
-      .then(dbBook => res.json(dbBook))
+    db.Book.findById(req.params.id) //< ---- req is the request object and params contains the url paramiters
+      .then(dbBook => res.json(dbBook)) // < --- find by id is using a mongoose method to search and retun
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
