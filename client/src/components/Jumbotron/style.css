@@ -1,4 +1,6 @@
 .jumbotron {
   padding: 100px;
   border-radius: 33px;
+  box-shadow: inset 2px 2px 10px black;
+  background-color: #fff;
 }
